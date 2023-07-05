@@ -80,7 +80,7 @@ CREATE TABLE person (
     type_document char(3)  NOT NULL,
     number_document char(15)  NOT NULL,
     email varchar(80) CHECK (email LIKE '%@%') NOT NULL,
-    cell_phone char(9) CHECK (LEN(cell_phone) = 9) NOT NULL,
+    cell_phone char(9) CHECK (LEN(cell_phone) = 9 AND cell_phone LIKE '9%') NOT NULL,
     career char(2)  NOT NULL,
     semester char(1)  NOT NULL,
     active char(1) DEFAULT ('A') NOT NULL,
@@ -89,7 +89,12 @@ CREATE TABLE person (
     CONSTRAINT type_document_check_person CHECK (type_document IN ('DNI', 'CNT', 'PPE')),
     CONSTRAINT unique_number_document_check_person UNIQUE (number_document),
     CONSTRAINT career_check_person CHECK (career IN ('AS', 'PA')),
-    CONSTRAINT semester_positive_check_person CHECK (semester > 0)
+    CONSTRAINT semester_positive_check_person CHECK (semester > 0),
+    CONSTRAINT number_document_check_person CHECK (
+        (type_document = 'DNI' AND LEN(number_document) = 8)
+        OR (type_document = 'CNT' AND LEN(number_document) = 10)
+        OR (type_document = 'PPE' AND LEN(number_document) = 15)
+    )
 );
 
 /* Ver estructura de tabla person */

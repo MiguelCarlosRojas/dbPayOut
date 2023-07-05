@@ -24,11 +24,11 @@ SELECT * FROM payout;
 
 -- Insertar registros en la tabla person
 INSERT INTO person (names, last_name, type_document, number_document, email, cell_phone, career, semester, active)
-VALUES ('Juan', 'Perez', 'DNI', '12345678', 'juan@example.com', '123456789', 'AS', '1', 'A'),
-       ('María', 'Lopez', 'CNT', '87654321', 'maria@universidad.edu', '987654321', 'AS', '2', 'A'),
-       ('Carlos', 'González', 'PPE', '56789012', 'carlos@example.com', '567890123', 'PA', '1', 'A'),
-       ('Ana', 'Rodriguez', 'DNI', '90817263', 'ana@universidad.edu', '908172635', 'PA', '2', 'A'),
-       ('Pedro', 'García', 'CNT', '72638490', 'pedro@example.com', '726384901', 'AS', '3', 'A');
+VALUES ('Juan', 'Perez', 'DNI', '12345678', 'juan@example.com', '923456789', 'AS', '1', 'A'),
+       ('María', 'Lopez', 'CNT', '2456789246', 'maria@universidad.edu', '987654321', 'AS', '2', 'A'),
+       ('Carlos', 'González', 'PPE', '485927348923456', 'carlos@example.com', '967890123', 'PA', '1', 'A'),
+       ('Ana', 'Rodriguez', 'DNI', '83749285', 'ana@universidad.edu', '908172635', 'PA', '2', 'A'),
+       ('Pedro', 'García', 'CNT', '6556789246', 'pedro@example.com', '926384901', 'AS', '3', 'A');
 
 -- Obtener todos los registros
 SELECT * FROM person;
