@@ -104,13 +104,15 @@ EXEC sp_columns @table_name = 'person';
 CREATE TABLE term (
     id int identity(1,1)  NOT NULL,
     person_id int  NOT NULL,
-    date_term date  NOT NULL,
+    date_term date  DEFAULT GETDATE() NOT NULL,
     status char(2) DEFAULT ('PE') NOT NULL,
     active char(1) DEFAULT ('A') NOT NULL,
     CONSTRAINT term_pk PRIMARY KEY (id),
     CONSTRAINT status_check_term CHECK (status IN ('PE', 'CA')),
-    CONSTRAINT active_check_term CHECK (active IN ('A', 'I'))
+    CONSTRAINT active_check_term CHECK (active IN ('A', 'I')),
+    CONSTRAINT date_term_check_term CHECK (date_term <= '2023-09-10')
 );
+
 
 /* Ver estructura de tabla term */
 EXEC sp_columns @table_name = 'term';
