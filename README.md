@@ -1,1 +1,0 @@
-# H221S3_06MiguelCarlos
